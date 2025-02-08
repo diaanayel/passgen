@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Password Generator</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="description" content=""> 
+  <meta name="keywords" content="" >
+	
+  <link rel="stylesheet" type="text/css" href="src/css/app.css">
+</head>
+<body class="flex flex-col flex-cv flex-ch">
+  <header class="flex flex-cv flex-spb">
+    <div>Password Generator</div>
+
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle" onclick="toggleTheme()">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+	<main class="flex flex-col">
+		<section class="flex flex-col">
+
+      <div class="flex flex-spb">
+        <label>Length</label>
+
+        <div class="flex flex-spb len-control">
+          <button class="btn" onclick="decrement()">-</button>
+          <input type="number" min="1", max="100" value="16" id="pass-len" class="pass-len">
+          <button class="btn" onclick="increment()">+</button>
+        </div>
+      </div>
+
+      <div class="flex flex-spb">
+        <label for="chbx-nums">Numbers</label>
+        <div class="chbx">
+          <input type="checkbox" id="chbx-nums" name="chnx-nums" value="">
+          <span class="chbx-mark"></span>
+        </div>
+      </div>
+
+      <div class="flex flex-spb">
+        <label for="chbx-lcase">Lowercase Letters</label>
+        <div class="chbx">
+          <input type="checkbox" id="chbx-lcase" name="chnx-lcase" value="">
+          <span class="chbx-mark"></span>
+        </div>
+      </div>
+
+      <div class="flex flex-spb">
+        <label for="chbx-ucase">Uppercase Letters</label>
+        <div class="chbx">
+          <input type="checkbox" id="chbx-ucase" name="chnx-ucase" value="">
+          <span class="chbx-mark"></span>
+        </div>
+      </div>
+				
+      <div class="field flex flex-spb">
+        <label for="chbx-spchars">
+          Specials:
+          <input type="text" 
+            id="spchars"
+            class="spchars"
+            value="[&@#$%^*_'<>[];?]">
+        </label>
+        <div class="chbx">
+          <input type="checkbox" id="chbx-spchars" name="chbxspchars" value="">
+          <span class="chbx-mark"></span>
+        </div>
+      </div>
+
+      <div class="hint pass-hint">
+        <input type="text" id="output" class="output" readonly onclick="this.select()">
+      </div>
+
+      <button class="flex-grow" onclick="generate_password()">Generate</button>
+		</section>
+		<section class="flex flex-col">
+		</section>
+
+
+  </main>
+
+  <script src="src/js/app.js"></script>
+</body>
